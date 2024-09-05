@@ -3,9 +3,12 @@ import { createServer } from 'http';
 import { MessageService } from './core/services/MessageService';
 import { setupWebSocketServer } from './utils/websocket';
 import { MessageRepository } from './repositories/MessageRepository';
+import cors from 'cors'
 import path from 'path';
 
 const app = express();
+
+app.use(cors())
 
 export const server = createServer(app);
 
